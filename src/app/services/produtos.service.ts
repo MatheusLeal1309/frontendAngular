@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import {catchError, map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import {catchError, map} from 'rxjs/operators';
 })
 export class ProdutosService {
 
-  private URL: string = 'http://localhost:3000/produtos'
+  private URL: string = environment.URL;
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
